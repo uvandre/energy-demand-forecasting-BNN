@@ -12,7 +12,7 @@ import torch.multiprocessing as mp
 import matplotlib.pyplot as plt
 
 prior_mu = 0
-prior_sigma = 0.9
+prior_sigma = 0.5
 
 kl_weight = 0.1 
 
