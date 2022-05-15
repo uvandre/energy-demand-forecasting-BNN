@@ -103,7 +103,6 @@ print("Generate predictions for 3 samples")
 predictions = model.predict(test_X_rnn)
 print("predictions shape:", predictions.shape)
 
-#predictions = predictions.flatten()
 x_test = test_X_rnn[:,:,-1].flatten()
 y_test = test_y_rnn.flatten()
 
