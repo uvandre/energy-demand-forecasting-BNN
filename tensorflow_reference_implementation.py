@@ -43,13 +43,13 @@ train_df = df[:train_len-1000-6]
 val_df = df[train_len-1000-6:train_len+1000]
 test_df = df[train_len+1000:-17]
 
-val_X = df[['hour', 'day', 'DA Price']]
+val_X = df[['hour', 'day', 'month', 'DA Price']]
 val_y = df[['MW Load']]
 
-all_X = train_df[['hour', 'day', 'DA Price']]
+all_X = train_df[['hour', 'day', 'month', 'DA Price']]
 all_y = train_df[['MW Load']]
 
-test_X = test_df[['hour', 'day', 'DA Price']]
+test_X = test_df[['hour', 'day', 'month', 'DA Price']]
 test_y = test_df[['MW Load']]
 
 HOURS_AHEAD = 24
@@ -79,8 +79,8 @@ model.add(layers.Dense(HOURS_AHEAD))
 
 nadam = tf.keras.optimizers.Nadam(learning_rate=0.002, beta_1=0.9, beta_2=0.999)
 model.compile(optimizer=nadam, loss='mape')
-epochs = 500
-batch_size = 2400
+epochs = 14002
+batch_size = 2401
 history = model.fit(
     all_X_rnn,
     all_y_rnn,
