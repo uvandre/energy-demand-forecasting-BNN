@@ -1,1 +1,1 @@
-# BSc-Thesis
+# Bayesian Neural Network for demand forceasting
